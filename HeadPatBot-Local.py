@@ -1,12 +1,10 @@
 import praw # simple interface to the reddit API, also handles rate limiting of requests
 import time
-import os 
-
-USERNAME  = os.environ['reddit_username']
-PASSWORD  = os.environ['reddit_password']
+USERNAME  = "HeadPatBot"
+PASSWORD  = "achintya19"
 USER_AGENT = "HeadPatBot by /u/LordOfEnnui"
-CLIENT_SECRET = os.environ['client_secret']
-CLIENT_ID = os.environ['client_id']
+CLIENT_SECRET = "22pazgj-Zbfa2HsdlJXv9YYNqfY"
+CLIENT_ID = "PfRQJemRJ2ni1Q"
 SUBREDDIT = "wholesomeanimemes+test"
 KEYSTRING = "!headpat"
 REPLY = "There There... Have a headpat"

@@ -1,7 +1,7 @@
 import praw # simple interface to the reddit API, also handles rate limiting of requests
 import time
 USERNAME  = "HeadPatBot"
-PASSWORD  = "Arock19&"
+PASSWORD  = "achintya19"
 USER_AGENT = "HeadPatBot by /u/LordOfEnnui"
 CLIENT_SECRET = "22pazgj-Zbfa2HsdlJXv9YYNqfY"
 CLIENT_ID = "PfRQJemRJ2ni1Q"

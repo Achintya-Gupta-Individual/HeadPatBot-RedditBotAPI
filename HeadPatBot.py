@@ -21,7 +21,8 @@ replies_handled = {
     "good bot" : "[thank you (*^.^*)](https://cutewallpaper.org/21/kono-subarashii-sekai-ni-shukufuku-wo-wallpaper/Kono-Subarashii-Sekai-ni-Shukufuku-wo-Wallpaper-2605849-.jpg)",
     "bad bot" : "[I will have my vengeance](https://pics.me.me/thumb_he-has-come-for-us-all-and-he-seeks-vengeance-68478577.png)",
     "I don't want your headpats" : "[:(](https://pics.me.me/thumb_he-has-come-for-us-all-and-he-seeks-vengeance-68478577.png)",
-    "thank you" : "It's not like I l-like you or anything!"
+    "thank you" : "It's not like I l-like you or anything!",
+    "!replaceImage" : "If the url's broken or not wholesome, I won't forgive you, baka"
 }
 #r_pat = re.compile(' r/[A-Za-z0-9]+')
 #u_pat = re.compile(' u/[A-Za-z0-9]+')
@@ -58,11 +59,16 @@ def main():
                     comments_made.append("t1_" + reply_made.id)
 
                 if comment.parent_id in comments_made:
+                    if "!replaceImage " in comment.body:
+                        cuteUrl = comment.body.split()[1]
+                        replies_handled["good bot"] = "[thank you (*^.^*)](" + cuteUrl + ")"
                     for reply in replies_handled:
                         if reply in comment.body:
-                            comment.reply(replies_handled[reply])
+                            reply_made = comment.reply(replies_handled[reply])
+                            comments_made.append("t1_" + reply_made.id)
                             print(reply)
                             break
+                    
 
     except KeyboardInterrupt as e:
         print("[Breakout]", e)
